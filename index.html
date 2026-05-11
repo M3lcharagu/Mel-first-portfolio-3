@@ -60,20 +60,20 @@
         <div class="stack-category">
             <h4>FRONTEND</h4>
             <div class="icons">
-                <span>JS</span> <span>React</span> <span>Next.js</span> <span>GSAP</span>
+                <span>HTML</span> <span>CSS</span> <span>C++</span> <span>GSAP</span> <span>JS</span>
             </div>
         </div>
         <div class="stack-category">
             <h4>BACKEND</h4>
             <div class="icons">
-                <span>Node.js</span> <span>PostgreSQL</span> <span>Prisma</span>
+                <span>php</span> <span>SQL</span> <span>Python</span>
             </div>
         </div>
     </div>
 </section>
 
 <section class="projects">
-    <h2 class="section-title">* SELECTED PROJECTS / (03)</h2>
+    <h2 class="section-title"> PROJECTS / (03)</h2>
     <div class="project-list">
         <div class="project-card">
             <span class="proj-num">01.</span>
@@ -87,7 +87,7 @@
         <div class="project-card">
             <span class="proj-num">02.</span>
             <div class="proj-info">
-                <h3>3D SODA LANDING PAGE</h3>
+                <h3>BARBER SHOP PAGE</h3>
                 <p>Three.js / React Fiber</p>
             </div>
             <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=500&q=80" alt="Project 2">
@@ -128,12 +128,12 @@
 <script>
     gsap.registerPlugin(ScrollTrigger);
 
-    // Animate Project Cards as they enter the screen
+    // Animate Project Cards 
     gsap.utils.toArray(".project-card").forEach(card => {
         gsap.from(card, {
             scrollTrigger: {
                 trigger: card,
-                start: "top 90%", // Starts when the top of the card is 90% down the screen
+                start: "top 90%", 
             },
             x: -50,
             opacity: 0,
@@ -141,13 +141,7 @@
         });
     });
 </script>
-    // Animate Testimonial Cards
-    gsap.from(".t-card", {
-        scrollTrigger: ".testimonial-grid",
-        y: 100,
-        opacity: 0,
-        stagger: 0.3,
-        duration: 1.2
+    
     });
 </script>
     
