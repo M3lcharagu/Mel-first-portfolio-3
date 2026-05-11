@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mel Charagu | Portfolio</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Syncopate:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav>
+        <div class="logo">MEL CHARAGU</div>
+        <div class="status-badge">AVAILABLE FOR WORK & FREELANCE</div>
+        <ul class="nav-links">
+            <li>Services</li>
+            <li>Experience</li>
+            <li>Projects</li>
+            <li>Contact</li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1 class="reveal-text">MEL <br> CHARAGU</h1>
+                <p class="sub-text">Full-Stack Developer based in Kenya</p>
+                
+                <div class="hero-actions">
+                    <button class="cv-btn">DOWNLOAD CV</button>
+                    <span class="scroll-indicator">SCROLL ↓</span>
+                </div>
+            </div>
+
+            <div class="hero-image-box">
+                <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=800&q=80" alt="Workstation">
+                <div class="image-overlay"></div>
+            </div>
+        </section>
+
+        <section class="services">
+            <h2 class="section-title">WHAT I DO /</h2>
+            <div class="service-grid">
+                <div class="service-item">
+                    <span class="num">( 01 )</span>
+                    <h3>Web Development</h3>
+                    <p>I create custom-coded websites specifically for your brand, ensuring they are scalable and fast.</p>
+                </div>
+                <div class="service-item">
+                    <span class="num">( 02 )</span>
+                    <h3>Advanced Solutions</h3>
+                    <p>Specializing in developing web apps that redefine possibilities and integrate complex systems.</p>
+                </div>
+            </div>
+        </section>
+      <section class="stack">
+    <h2 class="section-title">* MY STACK</h2>
+    <div class="stack-grid">
+        <div class="stack-category">
+            <h4>FRONTEND</h4>
+            <div class="icons">
+                <span>JS</span> <span>React</span> <span>Next.js</span> <span>GSAP</span>
+            </div>
+        </div>
+        <div class="stack-category">
+            <h4>BACKEND</h4>
+            <div class="icons">
+                <span>Node.js</span> <span>PostgreSQL</span> <span>Prisma</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="projects">
+    <h2 class="section-title">* SELECTED PROJECTS / (03)</h2>
+    <div class="project-list">
+        <div class="project-card">
+            <span class="proj-num">01.</span>
+            <div class="proj-info">
+                <h3>VEON - E-COMMERCE</h3>
+                <p>React / Tailwind / GSAP</p>
+            </div>
+            <img src="https://images.unsplash.com/photo-1557821552-17105176677c?auto=format&fit=crop&w=500&q=80" alt="Project 1">
+        </div>
+        
+        <div class="project-card">
+            <span class="proj-num">02.</span>
+            <div class="proj-info">
+                <h3>3D SODA LANDING PAGE</h3>
+                <p>Three.js / React Fiber</p>
+            </div>
+            <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=500&q=80" alt="Project 2">
+        </div>
+    </div>
+</section>
+
+<section class="testimonials">
+    <h2 class="section-title">KIND WORDS FROM CLIENTS</h2>
+    <div class="testimonial-grid">
+        <div class="t-card">
+            <p>"Mel perfectly captured my vision. The layout is clean and the animations are incredibly smooth."</p>
+            <span>- Client Name, CEO of TechCorp</span>
+        </div>
+        <div class="t-card">
+            <p>"Highly skilled developer. The project was completed ahead of schedule with top-tier quality."</p>
+            <span>- Project Manager, Studio X</span>
+        </div>
+    </div>
+</section>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script>
+        // animations
+        window.addEventListener('load', () => {
+            const tl = gsap.timeline();
+          // 1. Logo and Nav slide down
+            tl.from("nav", { y: -50, opacity: 0, duration: 1, ease: "power4.out" })           
+            // 2. Main Title reveals (The 'Ahmed Ragab' effect)
+            .from(".reveal-text", { y: 100, opacity: 0, duration: 1.2, ease: "expo.out" }, "-=0.5")  
+            // 3. Image box scales up
+            .from(".hero-image-box", { scale: 0.8, opacity: 0, duration: 1.5, ease: "expo.out" }, "-=1")
+            // 4. Service items pop in one by one
+            .from(".service-item", { y: 50, opacity: 0, stagger: 0.3, duration: 1, ease: "power3.out" }, "-=0.5");
+        });
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<script>
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Animate Project Cards as they enter the screen
+    gsap.utils.toArray(".project-card").forEach(card => {
+        gsap.from(card, {
+            scrollTrigger: {
+                trigger: card,
+                start: "top 90%", // Starts when the top of the card is 90% down the screen
+            },
+            x: -50,
+            opacity: 0,
+            duration: 1
+        });
+    });
+</script>
+    // Animate Testimonial Cards
+    gsap.from(".t-card", {
+        scrollTrigger: ".testimonial-grid",
+        y: 100,
+        opacity: 0,
+        stagger: 0.3,
+        duration: 1.2
+    });
+</script>
+    
+</body>
+</html>
